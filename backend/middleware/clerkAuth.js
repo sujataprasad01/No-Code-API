@@ -2,4 +2,8 @@
 
 const {ClerkExpressRequireAuth}=require("@clerk/clerk-sdk-node");
 
-module.exports=ClerkExpressRequireAuth();
+const clerkAuth = ClerkExpressRequireAuth({
+  secretKey: process.env.CLERK_SECRET_KEY,
+});
+
+module.exports = clerkAuth;
